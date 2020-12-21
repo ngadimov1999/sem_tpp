@@ -44,8 +44,8 @@
     <form action="/add" method="post" enctype="multipart/form-data">
         <input type="text" placeholder="Name" name="name" id="name" th:required="required"/>
         <input type="number" placeholder="Price" name="price" id="price" max="2147483647" th:required="required"/>
-        <select name="Garanty" id="Garanty" th:required="required">
-            <option th:each="Garanty : ${Garanty}"
+        <select name="garanty" id="garanty" th:required="required">
+            <option th:each="Garanty : ${garanty}"
                     th:value="${Garanty.getName()}"
                     th:text="${Garanty.getName()}"></option>
         </select>

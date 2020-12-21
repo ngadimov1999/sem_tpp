@@ -45,9 +45,9 @@
         <input type="text" placeholder="Name" name="name" id="name" th:required="required"/>
         <input type="number" placeholder="Price" name="price" id="price" max="2147483647" th:required="required"/>
         <select name="garanty" id="garanty" th:required="required">
-            <option th:each="garanty : ${garanty}"
-                    th:value="${garanty.getName()}"
-                    th:text="${garanty.getName()}"></option>
+            <option th:each="Garanty : ${garanty}"
+                    th:value="${Garanty.getName()}"
+                    th:text="${Garanty.getName()}"></option>
         </select>
         <button type="submit" id="submit">Добавить</button>
     </form>

@@ -1,7 +1,7 @@
 package com.webshop.simplewebapplication.Service;
 
 import com.webshop.simplewebapplication.database.User.UserDAO;
-import com.webshop.simplewebapplication.model.MyUser;
+import com.webshop.simplewebapplication.model.Usr;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,13 +15,13 @@ public class CustomUserDetailsService implements UserDetailsService {
     private UserDAO userDao;
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-        MyUser myUser= userDao.findByLogin(userName);
-        if (myUser == null) {
+        Usr usr = userDao.findByLogin(userName);
+        if (usr == null) {
             throw new UsernameNotFoundException("Unknown user: "+userName);
         }
         UserDetails user = User.builder()
-                .username(myUser.getLogin())
-                .password(myUser.getPassword())
+                .username(usr.getLogin())
+                .password(usr.getPassword())
                 .roles("USER")
                 .build();
         return user;

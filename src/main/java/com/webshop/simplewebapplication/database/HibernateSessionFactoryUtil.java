@@ -1,7 +1,7 @@
 package com.webshop.simplewebapplication.database;
 
 
-import com.webshop.simplewebapplication.model.Item;
+import com.webshop.simplewebapplication.model.Device;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -14,7 +14,7 @@ public class HibernateSessionFactoryUtil {
         if (sessionFactory == null) {
             try {
                 Configuration configuration = new Configuration().configure();
-                configuration.addAnnotatedClass(Item.class);
+                configuration.addAnnotatedClass(Device.class);
                 sessionFactory = configuration.buildSessionFactory();
 
             } catch (Exception e) {

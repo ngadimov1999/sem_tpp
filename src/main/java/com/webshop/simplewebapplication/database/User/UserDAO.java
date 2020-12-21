@@ -1,7 +1,7 @@
 package com.webshop.simplewebapplication.database.User;
 
-import com.webshop.simplewebapplication.model.MyUser;
+import com.webshop.simplewebapplication.model.Usr;
 
 public interface UserDAO {
-    MyUser findByLogin(String login);
+    Usr findByLogin(String login);
 }

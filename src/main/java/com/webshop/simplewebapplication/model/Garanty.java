@@ -1,6 +1,7 @@
 package com.webshop.simplewebapplication.model;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -13,12 +14,14 @@ public class Garanty {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column
-    private String name;
+    private Date date;
+    @ManyToOne
+    private Device device;
 
-
-    public Garanty(int id, String name) {
+    public Garanty(int id, Date date, Device device) {
         this.id = id;
-        this.name = name;
+        this.date = date;
+        this.device = device;
     }
 
     public int getId() {
@@ -29,19 +32,19 @@ public class Garanty {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public Date getDate() {
+        return date;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     @Override
     public String toString() {
         return "Garanty{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", date='" + date + '\'' +
                 '}';
     }
 }
